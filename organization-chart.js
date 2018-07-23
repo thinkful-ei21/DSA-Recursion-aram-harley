@@ -1,5 +1,5 @@
 
-var organization = {
+let organization = {
     Zuckerberg: {
         Schroepfer: {
             Bosworth: {
@@ -65,10 +65,13 @@ var organization = {
     }
 };
 function traverse(node, indent = 0) {
-    for (var key in node) {
+    // Base case
+    for (let key in node) {
         console.log(' '.repeat(indent), key);
+        // General Case
         traverse(node[key], indent + 4);
     }
 }
 
+// Test Case
 console.log(traverse(organization));
